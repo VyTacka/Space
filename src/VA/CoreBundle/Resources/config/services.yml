@@ -1,0 +1,7 @@
+parameters:
+#    va_core.example.class: VA\CoreBundle\Example
+
+services:
+#    va_core.example:
+#        class: %va_core.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

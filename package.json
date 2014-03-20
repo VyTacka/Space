@@ -1,0 +1,20 @@
+{
+    "name": "va-sandbox",
+    "version": "0.0.1",
+    "description": "va-sandbox",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/VyTacka/Space.git"
+    },
+    "dependencies": {
+        "gulp": "~3.5.6",
+        "gulp-sass": "~0.7.1",
+        "bower": "~1.2.7",
+        "gulp-bower": "~0.0.3",
+        "gulp-concat": "~2.2.0"
+    },
+    "engines": {
+        "node": ">= 0.8.0"
+    },
+    "private": true
+}

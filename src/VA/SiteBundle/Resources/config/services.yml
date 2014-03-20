@@ -1,0 +1,7 @@
+parameters:
+#    va_site.example.class: VA\SiteBundle\Example
+
+services:
+#    va_site.example:
+#        class: %va_site.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,8 @@
+va_admin:
+    resource: "@VAAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+va_site:
+    resource: "@VASiteBundle/Resources/config/routing.yml"
+    prefix:   /
+
