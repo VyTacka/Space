@@ -1,8 +1,5 @@
 {
-    "name": "va-sandbox",
-    "version": "1.0",
-    "homepage": "https://github.com/VyTacka/Space",
-    "description": "va-sandbox",
+    "name": "va-space-sandbox",
     "private": true,
     "dependencies": {
         "bootstrap-sass-official": "3.1.1",
