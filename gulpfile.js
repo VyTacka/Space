@@ -19,4 +19,7 @@ gulp.task('default', function () {
 
     gulp.src('app/Resources/lib/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*')
         .pipe(gulp.dest('web/fonts'));
+
+    gulp.src('app/Resources/lib/font-awesome/fonts/*')
+        .pipe(gulp.dest('web/fonts'));
 });
