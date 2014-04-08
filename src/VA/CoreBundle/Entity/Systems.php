@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Systems
  *
- * @ORM\Table(name="systems", indexes={@ORM\Index(name="fk_systems_stars_idx", columns={"star_id"})})
+ * @ORM\Table(name="systems")
  * @ORM\Entity
  */
 class Systems
@@ -41,16 +41,6 @@ class Systems
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
-
-    /**
-     * @var \VA\CoreBundle\Entity\Stars
-     *
-     * @ORM\ManyToOne(targetEntity="VA\CoreBundle\Entity\Stars")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="star_id", referencedColumnName="id")
-     * })
-     */
-    private $star;
 
 
 
@@ -131,28 +121,5 @@ class Systems
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set star
-     *
-     * @param \VA\CoreBundle\Entity\Stars $star
-     * @return Systems
-     */
-    public function setStar(\VA\CoreBundle\Entity\Stars $star = null)
-    {
-        $this->star = $star;
-
-        return $this;
-    }
-
-    /**
-     * Get star
-     *
-     * @return \VA\CoreBundle\Entity\Stars 
-     */
-    public function getStar()
-    {
-        return $this->star;
     }
 }

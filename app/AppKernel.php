@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new VA\SiteBundle\VASiteBundle(),
             new VA\AdminBundle\VAAdminBundle(),
             new VA\CoreBundle\VACoreBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

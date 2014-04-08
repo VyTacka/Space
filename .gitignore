@@ -21,3 +21,6 @@ build/*
 # Configuration files
 app/config/parameters.ini
 app/config/parameters.yml
+
+# WebSite files
+web/img/*

@@ -1,19 +1,119 @@
 {% extends('base.html.twig') %}
 
-{% block body %}
-    <div class="container">
-        <br><p>Main page!</p>
+{% block title %}{{ system.name }}{% endblock %}
+{% block headerTitle %}{{ system.name }}{% endblock %}
 
-        <p>Font awesome test:</p>
+{% block headerList %}
+    <li><a href="#star">{{ star.name }}</a></li>
+    {% for planet in planets %}
+        <li><a href="#planet{{ loop.index }}">{{ planet.name }}</a></li>
+    {% endfor %}
+{% endblock %}
 
-        <p><i class="fa fa-camera-retro fa-lg"></i> fa-camera-retro</p>
+{% block content %}
+    <div class="star" id="star">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pull-left">
+                    <div class="wow bounceInDown animated" data-wow-delay="0.1s"
+                         style="visibility: visible;-webkit-animation-delay: 0.1s; -moz-animation-delay: 0.1s; animation-delay: 0.1s;">
+                        <img class="img img-responsive"
+                             src={% if star.imgUrl %}{{ asset(star.imgUrl) }}{% else %}{{ asset('img/unknown.png') }}{% endif %}>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <h2>{{ star.name }}</h2>
 
-        <p><i class="fa fa-camera-retro fa-2x"></i> fa-camera-retro</p>
+                    <p class="text-justify">{{ star.description|nl2br }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if planets %}
+        <div class="planets container">
+            {% for planet in planets %}
+                <div class="planet row" id="planet{{ loop.index }}">
+                    <div class="col-md-4 pull-{% if (loop.index % 2) == 0 %}left{% else %}right{% endif %}">
+                        <div class="wow bounceInDown animated" data-wow-delay="0.1s"
+                             style="visibility: visible;-webkit-animation-delay: 0.1s; -moz-animation-delay: 0.1s; animation-delay: 0.1s;">
+                            <img class="img img-responsive"
+                                 src={% if planet.imgUrl %}{{ asset(planet.imgUrl) }}{% else %}{{ asset('img/unknown.png') }}{% endif %}>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <h2>{{ planet.name }}</h2>
 
-        <p><i class="fa fa-camera-retro fa-3x"></i> fa-camera-retro</p>
+                        <p class="text-justify">{{ planet.description|nl2br }}</p>
+                    </div>
+                    {#<div class="col-md-12">#}
+                    {#<div class="span4 collapse-group">#}
+                    {#<p class="collapse text-justify"></p>#}
 
-        <p><i class="fa fa-camera-retro fa-4x"></i> fa-camera-retro</p>
+                    {#<div class="text-center">#}
+                    {#<i class="moons fa fa-angle-down fa-3x"></i>#}
+                    {#</div>#}
+                    {#</div>#}
+                    {#</div>#}
+                </div>
+                {% if not loop.last %}
+                    <hr>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
+{% block contact %}
+    <div class="contact" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Contact Form</h1>
 
-        <p><i class="fa fa-camera-retro fa-5x"></i> fa-camera-retro</p>
+                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+                    <div class="status alert alert-success" style="display: none"></div>
+                    <form id="main-contact-form" class="contact-form" name="contact-form" method="post"
+                          action="{{ path('va_site_contact') }}" role="form">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input name="name" type="text" class="form-control" required="required"
+                                           placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input name="email" type="text" class="form-control" required="required"
+                                           placeholder="Email address">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <textarea name="message" id="message" required="required" class="form-control"
+                                              rows="8" placeholder="Message"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-danger btn-lg">Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-6">
+                    <h1>Connect with us</h1>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span class="fa-stack fa-2x" id="facebook">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}

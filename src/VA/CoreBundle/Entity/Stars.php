@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Stars
  *
- * @ORM\Table(name="stars")
+ * @ORM\Table(name="stars", indexes={@ORM\Index(name="fk_stars_systems1_idx", columns={"systems_id"})})
  * @ORM\Entity
  */
 class Stars
@@ -36,46 +36,21 @@ class Stars
     /**
      * @var integer
      *
-     * @ORM\Column(name="temperature", type="integer", nullable=true)
-     */
-    private $temperature;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="diameter", type="integer", nullable=true)
-     */
-    private $diameter;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="mass", type="integer", nullable=true)
-     */
-    private $mass;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="density", type="integer", nullable=true)
-     */
-    private $density;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="rotation_period", type="integer", nullable=true)
-     */
-    private $rotationPeriod;
-
-    /**
-     * @var integer
-     *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
+
+    /**
+     * @var \VA\CoreBundle\Entity\Systems
+     *
+     * @ORM\ManyToOne(targetEntity="VA\CoreBundle\Entity\Systems")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="systems_id", referencedColumnName="id")
+     * })
+     */
+    private $systems;
 
 
 
@@ -149,121 +124,6 @@ class Stars
     }
 
     /**
-     * Set temperature
-     *
-     * @param integer $temperature
-     * @return Stars
-     */
-    public function setTemperature($temperature)
-    {
-        $this->temperature = $temperature;
-
-        return $this;
-    }
-
-    /**
-     * Get temperature
-     *
-     * @return integer 
-     */
-    public function getTemperature()
-    {
-        return $this->temperature;
-    }
-
-    /**
-     * Set diameter
-     *
-     * @param integer $diameter
-     * @return Stars
-     */
-    public function setDiameter($diameter)
-    {
-        $this->diameter = $diameter;
-
-        return $this;
-    }
-
-    /**
-     * Get diameter
-     *
-     * @return integer 
-     */
-    public function getDiameter()
-    {
-        return $this->diameter;
-    }
-
-    /**
-     * Set mass
-     *
-     * @param integer $mass
-     * @return Stars
-     */
-    public function setMass($mass)
-    {
-        $this->mass = $mass;
-
-        return $this;
-    }
-
-    /**
-     * Get mass
-     *
-     * @return integer 
-     */
-    public function getMass()
-    {
-        return $this->mass;
-    }
-
-    /**
-     * Set density
-     *
-     * @param integer $density
-     * @return Stars
-     */
-    public function setDensity($density)
-    {
-        $this->density = $density;
-
-        return $this;
-    }
-
-    /**
-     * Get density
-     *
-     * @return integer 
-     */
-    public function getDensity()
-    {
-        return $this->density;
-    }
-
-    /**
-     * Set rotationPeriod
-     *
-     * @param integer $rotationPeriod
-     * @return Stars
-     */
-    public function setRotationPeriod($rotationPeriod)
-    {
-        $this->rotationPeriod = $rotationPeriod;
-
-        return $this;
-    }
-
-    /**
-     * Get rotationPeriod
-     *
-     * @return integer 
-     */
-    public function getRotationPeriod()
-    {
-        return $this->rotationPeriod;
-    }
-
-    /**
      * Get id
      *
      * @return integer 
@@ -271,5 +131,28 @@ class Stars
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set systems
+     *
+     * @param \VA\CoreBundle\Entity\Systems $systems
+     * @return Stars
+     */
+    public function setSystems(\VA\CoreBundle\Entity\Systems $systems = null)
+    {
+        $this->systems = $systems;
+
+        return $this;
+    }
+
+    /**
+     * Get systems
+     *
+     * @return \VA\CoreBundle\Entity\Systems 
+     */
+    public function getSystems()
+    {
+        return $this->systems;
     }
 }
