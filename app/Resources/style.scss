@@ -7,8 +7,10 @@ $my-gray: #ccc;
 $my-gray-darker: #222;
 $my-main: #34495e;
 $my-main-darker: #263545;
-$my-secondary: #f7d372;
+$my-secondary: #f5c54b;
 $my-social-facebook: #4f7dd4;
+
+$brand-primary: $my-secondary;
 
 $border-radius-base: 0px;
 $border-radius-large: 0px;
@@ -30,6 +32,10 @@ $navbar-default-brand-hover-color: $my-secondary;
 @import "lib/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
 @import "lib/font-awesome/scss/font-awesome";
 
+.btn {
+  border: 0px solid transparent;
+}
+
 body {
   background-color: $my-gray-lighter;
   margin-top: 50px;
@@ -46,7 +52,7 @@ a {
   padding-bottom: 70px;
 }
 
-.planet {
+.planet, .satellite {
   color: $gray-darker;
   padding-top: 35px;
   padding-bottom: 35px;
@@ -72,6 +78,8 @@ hr {
 // Contacts
 .contact {
   margin-top: 35px;
+  padding-top: 35px;
+  padding-bottom: 35px;
   background-color: $my-main;
   color: $my-gray-lighter;
 
@@ -79,6 +87,7 @@ hr {
   input[type="email"],
   textarea {
     background-color: $my-main-darker;
+    color: $my-gray;
     border: 0;
     @include transition(0.1s);
     &:focus {

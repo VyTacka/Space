@@ -15,13 +15,14 @@ class DefaultController extends Controller
         $system = $em->getRepository('VACoreBundle:Systems')->findAll();
         $star = $em->getRepository('VACoreBundle:Stars')->findOneBy(array('systems' => $system[0]->getId()));
         $planets = $em->getRepository('VACoreBundle:Planets')->findBy(array('system' => $system[0]->getId()));
-        $satellites = $em->getRepository('VACoreBundle:Satellites')->findAll();
+
+        $form = $this->createForm(new ContactType(array( 'action' => 'action')));
 
         return $this->render('VASiteBundle:Default:index.html.twig',
             array('system' => $system[0],
                 'star' => $star,
                 'planets' => $planets,
-                'satellites' => $satellites
+                'form' => $form->createView()
             ));
     }
 

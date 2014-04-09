@@ -45,7 +45,7 @@ class Satellites
     /**
      * @var \VA\CoreBundle\Entity\Planets
      *
-     * @ORM\ManyToOne(targetEntity="VA\CoreBundle\Entity\Planets")
+     * @ORM\ManyToOne(targetEntity="VA\CoreBundle\Entity\Planets", inversedBy="satellites")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="planet_id", referencedColumnName="id")
      * })

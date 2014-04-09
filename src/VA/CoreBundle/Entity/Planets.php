@@ -2,6 +2,7 @@
 
 namespace VA\CoreBundle\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -52,7 +53,12 @@ class Planets
      */
     private $system;
 
-
+    /**
+     * @var Collection
+     *
+     * @ORM\OneToMany(targetEntity="VA\CoreBundle\Entity\Satellites", mappedBy="planet")
+     */
+    protected $satellites;
 
     /**
      * Set name
@@ -155,4 +161,21 @@ class Planets
     {
         return $this->system;
     }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $satellites
+     */
+    public function setSatellites($satellites)
+    {
+        $this->satellites = $satellites;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSatellites()
+    {
+        return $this->satellites;
+    }
+
 }

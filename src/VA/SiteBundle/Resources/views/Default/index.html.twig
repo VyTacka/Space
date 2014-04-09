@@ -1,5 +1,7 @@
 {% extends('base.html.twig') %}
 
+{% form_theme form 'VASiteBundle:Form:fields.html.twig' %}
+
 {% block title %}{{ system.name }}{% endblock %}
 {% block headerTitle %}{{ system.name }}{% endblock %}
 
@@ -45,15 +47,36 @@
 
                         <p class="text-justify">{{ planet.description|nl2br }}</p>
                     </div>
-                    {#<div class="col-md-12">#}
-                    {#<div class="span4 collapse-group">#}
-                    {#<p class="collapse text-justify"></p>#}
+                    {% if planet.satellites|length > 0 %}
+                        <div class="col-md-12">
+                            <div class="span4 collapse-group">
+                                <div class="collapse text-justify">
+                                    {% for satellite in planet.satellites %}
+                                        {% if satellite %}
+                                            <div class="row">
+                                                <div class="satellite col-sm-2">
+                                                    <img class="img img-responsive"
+                                                            {% if satellite.imgUrl %} src=
+                                                            {{ asset(satellite.imgUrl) }}
+                                                            {% else %}
+                                                            {{ asset('img/unknown.png') }}
+                                                            {% endif %}>
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <h2>{{ satellite.name }}</h2>
 
-                    {#<div class="text-center">#}
-                    {#<i class="moons fa fa-angle-down fa-3x"></i>#}
-                    {#</div>#}
-                    {#</div>#}
-                    {#</div>#}
+                                                    <p class="text-justify">{{ satellite.description }}</p>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                                <div class="text-center">
+                                    <i class="moons fa fa-angle-down fa-3x"></i>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
                 </div>
                 {% if not loop.last %}
                     <hr>
@@ -72,34 +95,24 @@
                     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 
                     <div class="status alert alert-success" style="display: none"></div>
-                    <form id="main-contact-form" class="contact-form" name="contact-form" method="post"
-                          action="{{ path('va_site_contact') }}" role="form">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <input name="name" type="text" class="form-control" required="required"
-                                           placeholder="Name">
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <input name="email" type="text" class="form-control" required="required"
-                                           placeholder="Email address">
-                                </div>
-                            </div>
+                    {{ form_start(form) }}
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{ form_row(form.name) }}
                         </div>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <textarea name="message" id="message" required="required" class="form-control"
-                                              rows="8" placeholder="Message"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-danger btn-lg">Send Message</button>
-                                </div>
-                            </div>
+                        <div class="col-sm-6">
+                            {{ form_row(form.email) }}
                         </div>
-                    </form>
+                        <div class="col-sm-12">
+                            {{ form_row(form.subject) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            {{ form_row(form.message) }}
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
                 </div>
                 <div class="col-sm-6">
                     <h1>Connect with us</h1>
