@@ -1,6 +1,7 @@
 va_site_homepage:
     pattern:  /
     defaults: { _controller: VASiteBundle:Default:index }
+
 va_site_contact:
     pattern:  /contact
     defaults: { _controller: VASiteBundle:Default:contact }

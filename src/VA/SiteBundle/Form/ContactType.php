@@ -5,10 +5,10 @@ namespace VA\SiteBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Validator\Constraints\Collection;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Validator\Constraints\Collection;
 
 class ContactType extends AbstractType
 {
@@ -18,7 +18,7 @@ class ContactType extends AbstractType
             ->add('name', 'text', array(
                 'attr' => array(
                     'placeholder' => 'Name',
-                    'pattern'     => '.{2,}' //minlength
+                    'pattern' => '.{2,}' //minlength
                 )
             ))
             ->add('email', 'email', array(
@@ -29,7 +29,7 @@ class ContactType extends AbstractType
             ->add('subject', 'text', array(
                 'attr' => array(
                     'placeholder' => 'Subject',
-                    'pattern'     => '.{3,}' //minlength
+                    'pattern' => '.{3,}' //minlength
                 )
             ))
             ->add('message', 'textarea', array(
@@ -39,7 +39,9 @@ class ContactType extends AbstractType
                 )
             ))
             ->add('send_message', 'submit', array(
-                'attr' => array()
+                'attr' => array(
+                    'class' => 'btn btn-primary'
+                )
             ));
     }
 

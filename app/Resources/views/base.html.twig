@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>{% block title %}Space!{% endblock %}</title>
+    <title>{% block title %}Space - Solar System{% endblock %}</title>
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ asset('css/animate.css') }}" type="text/css">
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
@@ -12,7 +12,7 @@
 <body data-spy="scroll" data-target="#navbar" data-offset="0">
 {% block body %}
     {% block header %}
-        <nav class="navbar navbar-fixed-top navbar-default">
+        <nav class="navbar navbar-fixed-top navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -45,7 +45,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 pull-left">
-                        <p>Copyright &copy; Company 2014</p>
+                        <p>Copyright &copy; 2014</p>
                     </div>
                 </div>
             </div>

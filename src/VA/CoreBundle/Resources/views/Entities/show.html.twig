@@ -1,0 +1,42 @@
+{% extends '::admin.html.twig' %}
+
+{% block title %}
+    Space - Dashboard - {{ title }} - Show
+{% endblock %}
+
+{% block header_title %}
+    {{ title }}
+{% endblock %}
+
+{% block header_desc %}
+    {{ entity.name }} Information
+{% endblock %}
+
+{% block header_breadcrumb_lower %}
+    <li>Show</li>
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <strong>Name</strong>
+
+                    <p>{{ entity.name }}</p>
+                    <strong>Description</strong>
+
+                    <p>{{ entity.description|nl2br }}</p>
+                    <strong>Image URL</strong>
+
+                    <p><a href="{{ asset(entity.imgUrl) }}">{{ entity.imgUrl }}</a></p>
+                    <a class="btn btn-primary col-xs-12 col-sm-2"
+                       href="{{ path('planets_edit', { 'id': entity.id }) }}">Edit</a>
+                    <div class="col-sm-8"></div>
+                    {{ form(delete_form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

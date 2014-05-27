@@ -1,7 +1,85 @@
-{% extends('admin.html.twig') %}
+{% extends('::admin.html.twig') %}
+
+{% block header_title %}
+    Dashboard
+{% endblock %}
+{% block header_desc %}
+    Control Panel
+{% endblock %}
+{% block header_breadcrumb %}
+    <li class="active"><i class="fa fa-dashboard"></i>Dashboard</a>
+    </li>
+{% endblock %}
 
 {% block content %}
-    <div id="page-wrapper">
-        <p>smth smth...</p>
+    <div class="row">
+        <div class="col-sm-6 col-md-3">
+            <div class="panel panel-primary panel-stat">
+                <div class="panel-heading">
+                    <div class="stat">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <i class="fa fa-user fa-5x"></i>
+                            </div>
+                            <div class="col-xs-8">
+                                <small class="stat-label">Users</small>
+                                <h2>{{ users }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <div class="panel panel-success panel-stat">
+                <div class="panel-heading">
+                    <div class="stat">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <i class="fa fa-star fa-5x"></i>
+                            </div>
+                            <div class="col-xs-8">
+                                <small class="stat-label">Stars</small>
+                                <h2>{{ stars }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <div class="panel panel-danger panel-stat">
+                <div class="panel-heading">
+                    <div class="stat">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <i class="fa fa-circle fa-5x"></i>
+                            </div>
+                            <div class="col-xs-8">
+                                <small class="stat-label">Planets</small>
+                                <h2>{{ planets }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <div class="panel panel-warning panel-stat">
+                <div class="panel-heading">
+                    <div class="stat">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <i class="fa fa-moon-o fa-5x"></i>
+                            </div>
+                            <div class="col-xs-8">
+                                <small class="stat-label">Satellites</small>
+                                <h2>{{ satellites }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}

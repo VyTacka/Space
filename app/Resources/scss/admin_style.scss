@@ -1,0 +1,135 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+$font-family-base: 'Raleway', sans-serif;
+
+$gray-darker: lighten(#000, 15%);
+// #262626
+$gray-dark: lighten(#000, 22%);
+// #383838
+$gray: lighten(#000, 35%);
+// #595959
+$gray-light: lighten(#000, 56%);
+// #8f8f8f
+$gray-lighter: lighten(#000, 90%);
+// #d9d9d9
+
+$white-darker: #eaeae2;
+$white-dark: #f2f2ea;
+$white: #f7f6f2;
+
+$brand-primary: #61aadf;
+$brand-success: #72c57f;
+$brand-info: #6fa899;
+$brand-warning: #dca761;
+$brand-danger: #de6262;
+
+$social-facebook: #4f7dd4;
+
+$body-bg: $white-darker;
+$text-color: $gray;
+
+$link-color: $brand-danger;
+
+@mixin form-control-focus() {
+}
+
+@import "variables";
+@import "../lib/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
+@import "../lib/font-awesome/scss/font-awesome";
+
+body {
+  margin-top: 50px;
+}
+
+a {
+  @include transition(color 0.1s ease-in);
+}
+
+body {
+  margin-top: 50px;
+}
+
+#wrapper {
+  padding-left: 0;
+}
+
+#page-wrapper {
+  width: 100%;
+  padding: 5px 15px;
+}
+
+i {
+  padding-right: 5px;
+}
+
+.dropdown-menu {
+  @include box-shadow(none);
+}
+
+.breadcrumb {
+  text-align: right;
+  padding-top: 26px;
+}
+
+th {
+  background-color: $white-darker;
+}
+
+.panel {
+  @include box-shadow(none);
+}
+
+.form-control {
+  @include box-shadow(none);
+  @include transition(none);
+  @include form-control-focus();
+}
+
+@media (min-width: 768px) {
+  /* Wrappers */
+  #wrapper {
+    padding-left: 225px;
+  }
+  #page-wrapper {
+    padding: 15px 25px;
+  }
+  /* Side Nav */
+  .side-nav {
+    margin-left: -225px;
+    left: 225px;
+    width: 225px;
+    position: fixed;
+    top: 50px;
+    height: 100%;
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid $gray-dark;
+    background-color: $gray-dark;
+    overflow-y: auto;
+    > li {
+      &.dropdown > ul.dropdown-menu {
+        position: relative;
+        min-width: 225px;
+        margin: 0;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+
+        > li > a {
+          padding: 15px 15px 15px 40px;
+          background-color: $gray-darker;
+        }
+      }
+
+      > a {
+        width: 225px;
+      }
+    }
+  }
+  .navbar-collapse {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}

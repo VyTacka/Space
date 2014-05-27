@@ -1,0 +1,41 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}
+    Space - Dashboard - Profile - Edit
+{% endblock %}
+
+{% block header_title %}
+    Profile
+{% endblock %}
+
+{% block header_desc %}
+    Edit
+{% endblock %}
+
+{% block header_breadcrumb %}
+    <li>
+        <i class="fa fa-dashboard"></i>
+        <a href="{{ path("va_admin_homepage") }}">Dashboard</a>
+    </li>
+    <li class="active">
+        Profile
+    </li>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST"
+                          class="fos_user_profile_edit">
+                        {{ form_widget(form) }}
+                        <div>
+                            <input class="btn btn-primary" type="submit" value="Save"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

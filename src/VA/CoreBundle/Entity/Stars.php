@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Stars
  *
  * @ORM\Table(name="stars", indexes={@ORM\Index(name="fk_stars_systems1_idx", columns={"systems_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="VA\CoreBundle\Entity\StarsRepository")
  */
 class Stars
 {

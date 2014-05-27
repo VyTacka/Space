@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Satellites
  *
  * @ORM\Table(name="satellites", indexes={@ORM\Index(name="fk_moons_planets1_idx", columns={"planet_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="VA\CoreBundle\Entity\SatellitesRepository")
  */
 class Satellites
 {

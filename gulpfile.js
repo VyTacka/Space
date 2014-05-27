@@ -26,9 +26,14 @@ gulp.task('init', function () {
 });
 
 gulp.task('default', function () {
-    gulp.src('app/Resources/style.scss')
+    gulp.src('app/Resources/scss/main_style.scss')
         .pipe(sass())
-        .pipe(concat('style.css'))
+        .pipe(concat('main.css'))
+        .pipe(gulp.dest('web/css'));
+
+    gulp.src('app/Resources/scss/admin_style.scss')
+        .pipe(sass())
+        .pipe(concat('admin.css'))
         .pipe(gulp.dest('web/css'));
 
     gulp.src(js)

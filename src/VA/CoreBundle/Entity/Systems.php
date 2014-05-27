@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Systems
  *
  * @ORM\Table(name="systems")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="VA\CoreBundle\Entity\SystemsRepository")
  */
 class Systems
 {
@@ -43,7 +43,6 @@ class Systems
     private $id;
 
 
-
     /**
      * Set name
      *
@@ -60,7 +59,7 @@ class Systems
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -83,7 +82,7 @@ class Systems
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -106,7 +105,7 @@ class Systems
     /**
      * Get imgUrl
      *
-     * @return string 
+     * @return string
      */
     public function getImgUrl()
     {
@@ -116,10 +115,15 @@ class Systems
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 }

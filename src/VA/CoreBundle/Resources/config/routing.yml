@@ -1,3 +1,15 @@
-va_core_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: VACoreBundle:Default:index }
+va_core_planets:
+    resource: "@VACoreBundle/Resources/config/routing/planets.yml"
+    prefix:   /planets
+
+va_core_systems:
+    resource: "@VACoreBundle/Resources/config/routing/systems.yml"
+    prefix:   /systems
+
+va_core_satellites:
+    resource: "@VACoreBundle/Resources/config/routing/satellites.yml"
+    prefix:   /satellites
+
+va_core_stars:
+    resource: "@VACoreBundle/Resources/config/routing/stars.yml"
+    prefix:   /stars

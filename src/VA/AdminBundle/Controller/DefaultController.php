@@ -8,8 +8,14 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        $user = $this->get('security.context')->getToken()->getUser();
-
-        return $this->render('VAAdminBundle:Default:index.html.twig', array('user' => $user));
+        $em = $this->getDoctrine()->getManager();
+        return $this->render('VAAdminBundle:Default:index.html.twig',
+            array(
+                'planets' => $em->getRepository('VACoreBundle:Planets')->countAll(),
+                'satellites' => $em->getRepository('VACoreBundle:Satellites')->countAll(),
+                'stars' => $em->getRepository('VACoreBundle:Stars')->countAll(),
+                'systems' => $em->getRepository('VACoreBundle:Systems')->countAll(),
+                'users' => $em->getRepository('VACoreBundle:User')->countAll()
+            ));
     }
 }

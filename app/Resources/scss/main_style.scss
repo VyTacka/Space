@@ -1,0 +1,92 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+$font-family-base: 'Raleway', sans-serif;
+
+$gray-darker: lighten(#000, 15%);
+// #262626
+$gray-dark: lighten(#000, 22%);
+// #383838
+$gray: lighten(#000, 35%);
+// #595959
+$gray-light: lighten(#000, 56%);
+// #8f8f8f
+$gray-lighter: lighten(#000, 90%);
+// #d9d9d9
+
+$white-darker: #eaeae2;
+$white-dark: #f2f2ea;
+$white: #f7f6f2;
+
+$brand-primary: #61aadf;
+$brand-success: #72c57f;
+$brand-info: #6fa899;
+$brand-warning: #dca761;
+$brand-danger: #de6262;
+
+$social-facebook: #4f7dd4;
+
+$body-bg: $white-dark;
+$text-color: $gray;
+
+$link-color: $brand-danger;
+
+@import "variables";
+@import "../lib/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
+@import "../lib/font-awesome/scss/font-awesome";
+
+body {
+  margin-top: 50px;
+}
+
+a {
+  @include transition(color 0.1s ease-in);
+}
+
+footer {
+  background-color: $gray-dark;
+  color: $white;
+}
+
+.wow {
+  padding-top: 35px;
+}
+
+.star {
+  background-color: $gray-dark;
+  color: $white;
+  padding-top: 35px;
+  padding-bottom: 70px;
+}
+
+.planet, .satellite {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.contact {
+  margin-top: 35px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  background-color: $gray-dark;
+  color: $white;
+
+  #facebook .fa-circle {
+    color: $social-facebook;
+  }
+
+  .form-control {
+    color: $white;
+    background-color: $gray-darker;
+    border: 1px solid $gray-darker;
+  }
+}
+
+.form-control {
+  @include box-shadow(none);
+  @include transition(none);
+
+  &:focus {
+    @include box-shadow(none);
+    @include transition(color 0.1s ease-in);
+  }
+}

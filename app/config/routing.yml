@@ -1,10 +1,14 @@
+va_site:
+    resource: "@VASiteBundle/Resources/config/routing.yml"
+    prefix:   /
+
 va_admin:
     resource: "@VAAdminBundle/Resources/config/routing.yml"
     prefix:   /admin
 
-va_site:
-    resource: "@VASiteBundle/Resources/config/routing.yml"
-    prefix:   /
+va_core:
+    resource: "@VACoreBundle/Resources/config/routing.yml"
+    prefix:   /admin
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"

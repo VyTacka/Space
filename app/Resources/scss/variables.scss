@@ -1,0 +1,157 @@
+$border-radius-base: 0px;
+$border-radius-large: 0px;
+$border-radius-small: 0px;
+
+$component-active-color: $white;
+$component-active-bg: $brand-danger;
+
+$table-bg: transperant;
+$table-bg-accent: $white-darker;
+$table-bg-hover: $white-darker;
+$table-bg-active: $table-bg-hover;
+$table-border-color: $table-bg-accent;
+
+$btn-default-color: $gray;
+$btn-default-bg: $white-dark;
+$btn-default-border: $btn-default-bg;
+
+$btn-primary-color: $white;
+$btn-primary-border: $brand-primary;
+
+$btn-success-color: $white;
+$btn-success-border: $brand-success;
+
+$btn-info-color: $white;
+$btn-info-border: $brand-info;
+
+$btn-warning-color: $white;
+$btn-warning-border: $brand-warning;
+
+$btn-danger-color: $white;
+$btn-danger-border: $brand-danger;
+
+$btn-link-disabled-color: $white-darker;
+
+$input-bg: $white-darker;
+$input-bg-disabled: $input-bg;
+$input-color: $gray;
+$input-border: $input-bg;
+$input-border-focus: $input-bg;
+
+$dropdown-bg: $gray-dark;
+$dropdown-border: $dropdown-bg;
+$dropdown-fallback-border: $dropdown-border;
+$dropdown-divider-bg: $gray-darker;
+
+$dropdown-link-active-bg: $gray-darker;
+$dropdown-link-color: $white;
+$dropdown-link-hover-color: $brand-danger;
+$dropdown-link-hover-bg: $gray-darker;
+$dropdown-link-disabled-color: $dropdown-link-color;
+$dropdown-link-active-color: $brand-danger;
+$dropdown-header-color: $gray;
+$dropdown-caret-color: $gray-darker;
+
+$navbar-inverse-color: $white;
+$navbar-inverse-bg: $gray-dark;
+$navbar-inverse-border: $navbar-inverse-bg;
+
+$navbar-inverse-link-color: $white;
+$navbar-inverse-link-hover-color: $brand-danger;
+$navbar-inverse-link-hover-bg: $gray-darker;
+$navbar-inverse-link-active-bg: $navbar-inverse-link-hover-bg;
+$navbar-inverse-link-disabled-color: $gray-dark;
+
+$navbar-inverse-brand-hover-color: $navbar-inverse-link-hover-color;
+
+$navbar-inverse-toggle-hover-bg: $navbar-inverse-link-hover-bg;
+$navbar-inverse-toggle-icon-bar-bg: $navbar-inverse-link-color;
+$navbar-inverse-toggle-border-color: $navbar-inverse-toggle-hover-bg;
+
+$nav-link-padding: 10px 15px !default;
+$nav-link-hover-bg: $gray-lighter !default;
+
+$nav-disabled-link-color: $gray-light !default;
+$nav-disabled-link-hover-color: $gray-light !default;
+
+$nav-open-link-hover-color: $white !default;
+
+$nav-tabs-border-color: #ddd !default;
+
+$nav-tabs-link-hover-border-color: $gray-lighter !default;
+
+$nav-tabs-active-link-hover-bg: $body-bg !default;
+$nav-tabs-active-link-hover-color: $gray !default;
+$nav-tabs-active-link-hover-border-color: #ddd !default;
+
+$nav-tabs-justified-link-border-color: #ddd !default;
+$nav-tabs-justified-active-link-border-color: $body-bg !default;
+
+$state-success-text: $white;
+$state-success-bg: $brand-success;
+$state-success-border: $state-success-bg;
+
+$state-info-text: $white;
+$state-info-bg: $brand-info;
+$state-info-border: $state-info-bg;
+
+$state-warning-text: $white;
+$state-warning-bg: $brand-warning;
+$state-warning-border: $state-warning-bg;
+
+$state-danger-text: $white;
+$state-danger-bg: $brand-danger;
+$state-danger-border: $state-danger-bg;
+
+$tooltip-color: $white;
+$tooltip-bg: $gray-darker;
+
+$popover-bg: $white;
+$popover-arrow-color: $white;
+
+$label-default-bg: $white-darker;
+$label-color: $white;
+$label-link-hover-color: $white;
+
+$modal-content-bg: $white;
+$modal-backdrop-bg: $gray-darker;
+$modal-header-border-color: $white-darker;
+
+$progress-bg: $white-darker;
+$progress-bar-color: $white;
+
+$panel-bg: $white;
+$panel-inner-border: transparent;
+$panel-footer-bg: $white;
+
+$panel-default-text: $gray;
+$panel-default-border: transparent;
+$panel-default-heading-bg: $white-darker;
+
+$panel-primary-text: $white;
+
+$well-bg: $white;
+$well-border: $well-bg;
+
+$badge-color: $white;
+$badge-link-hover-color: $white;
+$badge-bg: $white-darker;
+$badge-active-bg: $white;
+
+$breadcrumb-bg: $white-darker;
+$breadcrumb-color: $gray;
+$breadcrumb-active-color: $breadcrumb-color;
+
+$carousel-control-color: $white;
+$carousel-indicator-active-bg: $white;
+$carousel-indicator-border-color: $white;
+$carousel-caption-color: $white;
+
+$close-color: $gray;
+$close-text-shadow: 0 1px 0 $white;
+
+$kbd-color: $white;
+$kbd-bg: $gray;
+
+$text-muted: $gray-light;
+$hr-border: $gray-lighter;

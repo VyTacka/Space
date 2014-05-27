@@ -37,6 +37,13 @@ class Planets
     /**
      * @var integer
      *
+     * @ORM\Column(name="`order`", type="integer")
+     */
+    private $order;
+
+    /**
+     * @var integer
+     *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
@@ -69,14 +76,13 @@ class Planets
     public function setName($name)
     {
         $this->name = $name;
-
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -99,7 +105,7 @@ class Planets
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -122,7 +128,7 @@ class Planets
     /**
      * Get imgUrl
      *
-     * @return string 
+     * @return string
      */
     public function getImgUrl()
     {
@@ -132,7 +138,7 @@ class Planets
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -155,7 +161,7 @@ class Planets
     /**
      * Get system
      *
-     * @return \VA\CoreBundle\Entity\Systems 
+     * @return \VA\CoreBundle\Entity\Systems
      */
     public function getSystem()
     {
@@ -178,4 +184,62 @@ class Planets
         return $this->satellites;
     }
 
+    public function __toString()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->satellites = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add satellites
+     *
+     * @param \VA\CoreBundle\Entity\Satellites $satellites
+     * @return Planets
+     */
+    public function addSatellite(\VA\CoreBundle\Entity\Satellites $satellites)
+    {
+        $this->satellites[] = $satellites;
+
+        return $this;
+    }
+
+    /**
+     * Remove satellites
+     *
+     * @param \VA\CoreBundle\Entity\Satellites $satellites
+     */
+    public function removeSatellite(\VA\CoreBundle\Entity\Satellites $satellites)
+    {
+        $this->satellites->removeElement($satellites);
+    }
+
+    /**
+     * Set order
+     *
+     * @param integer $order
+     * @return Planets
+     */
+    public function setOrder($order)
+    {
+        $this->order = $order;
+
+        return $this;
+    }
+
+    /**
+     * Get order
+     *
+     * @return integer 
+     */
+    public function getOrder()
+    {
+        return $this->order;
+    }
 }
