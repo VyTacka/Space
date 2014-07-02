@@ -61,13 +61,13 @@ _Pav. 8 Įrašų peržiūra_
 
 Kairėje pusėje esančiame meniu administratorius gali įsijungi tam tikrų įrašų sąrašus (šiuo atveju planetų). Ekrane administratorius mato lentelę, kurioje atvaizduojami visi tai DB lentelei priklausantys įrašai. Sąrašo apačioje yra mygtukas „Add a new Planet“, kurį paspaudęs administratorius gali pridėti naują įrašą (šiuo atveju planetą, žiūrėti Pav. 10). Prie kiekvieno įrašo, dešinėje lentelės pusėje, matomas mygtukas „Edit“, kurį paspaudęs administratorius gali redaguoti pasirinktą įrašą (žiūrėti Pav. 11). Kairėje įrašo pusėje administratoriui paspaudus ant įrašo pavadinimo, jam bus rodoma visa pasirinkto įrašo informacija (žiūrėti Pav. 9).
  
-![](//screenshots/8.png)
+![](/screenshots/8.png)
 _Pav. 9 Įrašo peržiūra_
 
-![](//screenshots/9.png)
+![](/screenshots/9.png)
 _Pav. 10 Naujo įrašo įterpimas_
 
-![](//screenshots/10.png)
+![](/screenshots/10.png)
 _Pav. 11 Esamo įrašo redagavimas_
 
 ## 5.	IŠVADOS
